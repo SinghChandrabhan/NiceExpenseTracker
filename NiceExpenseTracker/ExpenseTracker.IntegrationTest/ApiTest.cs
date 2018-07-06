@@ -25,6 +25,16 @@ namespace ExpenseTracker.IntegrationTest
             var response = client.GetAsync($"{BaseAddress}/expense/").Result;
             Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
         }
-       
+
+        [TestMethod]
+        public void Create_Expense_Test()
+        {
+            var client = new HttpClient();            
+            var postData = new StringContent(@"{name: ""from_Test"", amount: ""10"", category: ""rent"", dateSubmitted: ""7/15/2018""}",
+                Encoding.UTF8, "application/json");
+            var response = client.PostAsync($"{BaseAddress}/expense/", postData).Result;
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.Created);
+        }
+
     }
 }
