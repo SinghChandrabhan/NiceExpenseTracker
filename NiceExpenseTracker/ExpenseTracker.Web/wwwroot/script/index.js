@@ -14,29 +14,29 @@
     });
 
     $("form").submit(function (event) {
-        
+
         var dataToPost = {
-            name: name.val(),
-            amount: amount.val(),
-            category: category,
-            dateSubmitted: date.val()
+            "name": name.val(),
+            "amount": amount.val(),
+            "category": category,
+            "dateSubmitted": date.val()
         }
 
-        clearMessagesAndShowSpinner();     
+        clearMessagesAndShowSpinner();
 
         var jqxhr = $.ajax({
             url: expenseApiUrl,
             type: "POST",
-            data: dataToPost,            
-            dataType: "json"
-            })
+            data: JSON.stringify(dataToPost),
+            contentType: 'application/json',
+        })
             .done(function () {
                 progressBar.hide();
                 successmsg.slideDown("slow");
             })
             .fail(function (error) {
                 progressBar.hide();
-                errormsg.slideDown("slow");              
+                errormsg.slideDown("slow");
             })
 
         event.preventDefault();
@@ -44,9 +44,9 @@
     });
 
     var clearMessagesAndShowSpinner = function () {
-        progressBar.show();  
+        progressBar.show();
         successmsg.hide();
-        errormsg.hide();   
+        errormsg.hide();
     }
 
 })(jQuery);

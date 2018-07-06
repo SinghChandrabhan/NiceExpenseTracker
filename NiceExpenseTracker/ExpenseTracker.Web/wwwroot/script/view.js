@@ -60,6 +60,7 @@
         var maxLengthLimit = 800;
         var max = data.
             sort(function (a, b) { return d3.ascending(a.values, b.values); })[data.length - 1].values;
+        max = max == 0 ? 1 : max;
 
         d3.select(".chart")
             .selectAll("div")

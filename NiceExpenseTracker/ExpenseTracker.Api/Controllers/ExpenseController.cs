@@ -39,7 +39,7 @@ namespace ExpenseTracker.Api.Controllers
 
                 return Ok(expenses);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //TODO:Catch and log exception
                 return StatusCode((int)HttpStatusCode.InternalServerError, _configuration["HttpErroMessages:ServerError"]);
@@ -73,10 +73,10 @@ namespace ExpenseTracker.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(ExpenseModel value)
+        public async Task<IActionResult> Post([FromBody]ExpenseModel value)
         {
-            if (!ModelState.IsValid)           
-                return BadRequest(ModelState);           
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
             try
             {
                 var expenseEntiry = new ExpenseEntity()

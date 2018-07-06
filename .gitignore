@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/NiceExpenseTracker/.vs/NiceExpenseTracker.Solution/v15/Server/sqlite3
+/NiceExpenseTracker/ExpenseTracker.Api/obj
+/NiceExpenseTracker/ExpenseTracker.Contracts/obj
+/NiceExpenseTracker/ExpenseTracker.DataAccess/obj
+/NiceExpenseTracker/ExpenseTracker.Web/obj
+/NiceExpenseTracker/packages
+/NiceExpenseTracker/ExpenseTracker.Api/bin/Debug/netcoreapp2.0
+/NiceExpenseTracker/.vs
+/NiceExpenseTracker/ExpenseTracker.Contracts/bin/Debug/netstandard2.0
+/NiceExpenseTracker/ExpenseTracker.DataAccess/bin/Debug/netstandard2.0
+/NiceExpenseTracker/ExpenseTracker.IntegrationTest/bin/Debug
+/NiceExpenseTracker/ExpenseTracker.IntegrationTest/obj/Debug
+/NiceExpenseTracker/ExpenseTracker.Web/bin/Debug/netcoreapp2.0

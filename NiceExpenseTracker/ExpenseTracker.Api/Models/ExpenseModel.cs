@@ -13,9 +13,7 @@ namespace ExpenseTracker.Api.Models
 
         public decimal Amount { get; set; }
         public string Category { get; set; }
-
-
-        [Required(ErrorMessage = "DateSubmitted required")]
+        
         public DateTime DateSubmitted { get; set; }
     }
 }
