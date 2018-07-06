@@ -2,6 +2,10 @@
 
 Nice expense tracker is an application to report your monthly expenses.
 
+## Problem Statement:
+Create an application to submit and view expenses. User should be able to enter expense amount againt various categories(rent, shoppiong etc). Once entered, user should be able to see a visual(preferably charts/plots) by providing their name and month of expenditure.
+
+
 
 ### Components
 
