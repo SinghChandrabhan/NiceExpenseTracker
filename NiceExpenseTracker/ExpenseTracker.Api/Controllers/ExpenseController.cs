@@ -30,6 +30,8 @@ namespace ExpenseTracker.Api.Controllers
         {
             try
             {
+                //Important: I avoided using a layer between API and DataAccess to keep it simple
+                //In more complex cases, we should consider bringing Business layer in between
                 var expenses = await _iExpenseDataAccess.GetAllExpenses();
 
                 if (expenses?.Count == 0)
@@ -52,6 +54,8 @@ namespace ExpenseTracker.Api.Controllers
 
             try
             {
+                //Important: I avoided using a layer between API and DataAccess to keep it simple
+                //In more complex cases, we should consider bringing Business layer in between
                 Expression<Func<ExpenseEntity, bool>> searchPredicate = (entity) =>
                     string.Equals(entity.Name, name, StringComparison.InvariantCultureIgnoreCase)
                     && entity.DateSubmitted.Month == month
